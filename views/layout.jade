@@ -1,0 +1,40 @@
+include _define
+
+doctype html
+html
+	head( prefix='og: http://ogp.me/ns# website: http://ogp.me/ns/website#' )
+		meta( charset='UTF-8' )
+
+		-if( title )
+			title= title + ' | ' + TITLE
+		-else
+			title= TITLE
+
+		-if( description )
+			meta( name='description', content=description )
+
+		meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+		meta( name='viewport', content='width=device-width, initial-scale=1' )
+
+		meta( name='msapplication-starturl', content=SITEURL )
+		meta( name='msapplication-TileColor', content='#f26258' )
+		meta( name='msapplication-TileImage', conten='/img/ms-icon.png' )
+		meta( property='og:type', content='website' )
+		meta( property='og:url', content=SITEURL )
+		meta( property='og:title', content=TITLE )
+		meta( property='og:image', content='/img/og-image.png' )
+		meta( property='og:site_name', content=TITLE )
+
+		link( rel='apple-touch-icon', href='/img/apple-touch-icon.png' )
+		link( rel='icon', href='/img/favicon.ico' )
+		link( rel='stylesheet', href='http://fonts.googleapis.com/css?family=Crete+Round' )
+		link( rel='stylesheet', href='/css/styles.css' )
+
+	body
+		block content
+
+		block scripts
+			script( src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js' )
+			script.
+				window.jQuery || document.write('<script src="/js/jquery.js"><\/script>')
+			script( src='/js/plugins.js' )

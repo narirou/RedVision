@@ -1,0 +1,43 @@
+extends layout
+
+block content
+	#container
+		#header
+			#header-left
+				a.header-logo( href='/' )
+					img( src='/img/title.svg', width='276', height='45', alt=TITLE )
+			#header-right
+				a#icon-about( href='/about' )
+					img( src='/img/about.svg', width='40', height='40', alt='#{TITLE} について' )
+				a#icon-help( href='/help' )
+					img( src='/img/help.svg', width='40', height='40', alt='操作説明' )
+		#content
+			#collections-container
+				#time
+					.time-left
+						.arrow-left
+					span.current 2014
+					.time-right
+						.arrow-right
+				#collections
+					each item in items
+						-var yes = item.yes.count || 0;
+						-var no = item.no.count || 0;
+						-var all = yes + no;
+						-var level = all > 0 ? Math.floor( 10 * yes / all ) : 0;
+						-var dead = item.dead ? 'dead' : '';
+
+						a.item.hide(
+							id='item-#{item.id}',
+							class= 'level-#{level} #{dead}',
+							href='/collections/#{item.id}',
+							title=item.title,
+							data-id=item.id
+						)!= item.svg
+
+			#separator
+			#view-container
+
+append scripts
+	script( src='/js/page.js' )
+	script( src='/js/scripts.js' )

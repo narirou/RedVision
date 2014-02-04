@@ -1,0 +1,101 @@
+@mixin clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: '';
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin container {
+	// [ old ]
+	// letter-spacing: 0.2em;
+	// word-spacing: -1em;
+	// font-size: 0em;
+
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	*word-spacing: -0.43em;
+	text-rendering: optimizespeed;
+
+	// [ new ]
+	// font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+	// display: flex;
+	// flex-flow: row wrap;
+}
+
+@mixin clear-container {
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-rendering: auto;
+}
+
+@mixin column {
+	// [ old ]
+	// letter-spacing: normal;
+	// word-spacing: normal;
+	// text-rendering: auto;
+	// font-size: 1rem;
+
+	display: inline-block;
+	vertical-align: top;
+	@include clear-container;
+}
+
+@mixin block-column {
+	display: block;
+	@include clear-container;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.none {
+	display: none !important;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.hide {
+	opacity: 0;
+}
+
+.break {
+	// hyphens: auto;
+	word-break: break-all;
+	white-space: pre-wrap;
+}
+
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
+.container {
+	@include container;
+}
+
+.column {
+	@include column;
+}
+
+.block-column {
+	@include block-column;
+}
+
+.table {
+	display: table;
+	margin: 0 auto;
+}

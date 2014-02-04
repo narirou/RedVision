@@ -1,0 +1,35 @@
+block viewContent
+	#view
+		img.view-logo( src='/img/view-logo.svg' )
+		.image
+			img( src='/collections/#{item.id}/image', alt=item.title )
+		.title
+			h3 【 #{item.title} 】
+				span.translation= item.translation
+			.details
+				span.category= item.category
+				span.sep= '/'
+				span.region= item.region
+		.description!= item.description
+
+		#counter
+			.buttons
+				-if( item.dead )
+					button.dead( disabled ) 絶滅しました。
+				-else
+					button.yes( data-url='/countup' ) 絶滅しそう
+					button.no( data-url='/countdown' ) 絶滅しなさそう
+
+			-var yes = item.yes.count || 0;
+			-var no  = item.no.count || 0;
+			-var all = yes + no;
+			-var status;
+
+			-if( item.dead )
+				-status = 'dead'
+			-else if( all < 0 )
+				-status = 'empty'
+			.bar( data-yes=yes, data-no=no, data-status=status )
+				.yes
+				.no
+			.done-message 投票しました。

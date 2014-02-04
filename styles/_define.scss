@@ -1,0 +1,56 @@
+// default option
+$content-padding:   20px;
+$header-height:     80px;
+$time-height:       40px;
+$item-height:       120px;
+$font-default:      'Lucida Grande', 'Segoe UI', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$font-crete-round:  'Crete Round', serif;
+
+// colors
+$color-red:         #f26258;
+$color-black:       #4d4d4d;
+
+$color-10:          $color-red; // dead
+$color-3:           #a25351;
+$color-6:           #c24949;
+$color-9:           $color-red; // red
+$color-0:           $color-black; // black
+
+$color-8:           mix( $color-9, $color-6, 60% );
+$color-7:           mix( $color-9, $color-6, 30% );
+$color-5:           mix( $color-6, $color-3, 60% );
+$color-4:           mix( $color-6, $color-3, 30% );
+$color-2:           mix( $color-3, $color-0, 60% );
+$color-1:           #68534e;
+
+$bg-color:          #fcf9f5;
+$link-color:        $color-red;
+$selection-color:   #dfd0bf;
+
+// animation timing
+$ease-in-quad:      cubic-bezier( 0.55, 0.085, 0.68, 0.53 );
+$ease-in-cubic:     cubic-bezier( 0.55, 0.055, 0.675, 0.19 );
+$ease-in-quart:     cubic-bezier( 0.895, 0.03, 0.685, 0.22 );
+$ease-in-quint:     cubic-bezier( 0.755, 0.05, 0.855, 0.06 );
+$ease-in-sine:      cubic-bezier( 0.47, 0, 0.745, 0.715 );
+$ease-in-expo:      cubic-bezier( 0.95, 0.05, 0.795, 0.035 );
+$ease-in-circ:      cubic-bezier( 0.6, 0.04, 0.98, 0.335 );
+$ease-in-back:      cubic-bezier( 0.600, -0.280, 0.735, 0.045 );
+
+$ease-out-quad:     cubic-bezier( 0.25, 0.46, 0.45, 0.94 );
+$ease-out-cubic:    cubic-bezier( 0.215, 0.61, 0.355, 1 );
+$ease-out-quart:    cubic-bezier( 0.165, 0.84, 0.44, 1 );
+$ease-out-quint:    cubic-bezier( 0.23, 1, 0.32, 1 );
+$ease-out-sine:     cubic-bezier( 0.39, 0.575, 0.565, 1 );
+$ease-out-expo:     cubic-bezier( 0.19, 1, 0.22, 1 );
+$ease-out-circ:     cubic-bezier( 0.075, 0.82, 0.165, 1 );
+$ease-out-back:     cubic-bezier( 0.175, 0.885, 0.320, 1.275 );
+
+$ease-in-out-quad:  cubic-bezier( 0.455, 0.03, 0.515, 0.955 );
+$ease-in-out-cubic: cubic-bezier( 0.645, 0.045, 0.355, 1 );
+$ease-in-out-quart: cubic-bezier( 0.77, 0, 0.175, 1 );
+$ease-in-out-quint: cubic-bezier( 0.86, 0, 0.07, 1 );
+$ease-in-out-sine:  cubic-bezier( 0.445, 0.05, 0.55, 0.95 );
+$ease-in-out-expo:  cubic-bezier( 1, 0, 0, 1 );
+$ease-in-out-circ:  cubic-bezier( 0.785, 0.135, 0.15, 0.86 );
+$ease-in-out-back:  cubic-bezier( 0.680, -0.550, 0.265, 1.550 );

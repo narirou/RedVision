@@ -1,0 +1,1 @@
+{  "id": "sample",  "title": "サンプルさん",  "caption": "さんぷるさん",  "translation": "sample-san",  "category": "カテゴリー",  "region": "地域",  "description": "サンプルさんとは、絶滅危惧種班にjson形式とはどういうものなのかを示すために生まれたサンプル動物です。<br><br>生まれたにも関わらず実際の制作物には反映されないという、絶滅危惧種です。"}
