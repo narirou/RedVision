@@ -2,17 +2,18 @@ var express = require( 'express' ),
 	http = require( 'http' ),
 	path = require( 'path' ),
 	routes = {
-        index:    require( './routes/index' ),
-        redirect: require( './routes/redirect' ),
-        update:   require( './routes/update' ),
-        resource: require( './routes/resource' ),
-        contents: require( './routes/contents' ),
-        count:    require( './routes/count' ),
+		index:    require( './routes/index' ),
+		redirect: require( './routes/redirect' ),
+		update:   require( './routes/update' ),
+		resource: require( './routes/resource' ),
+		contents: require( './routes/contents' ),
+		count:    require( './routes/count' ),
 	};
 
 var redirectSlash = function( req, res, next ) {
-	if( req.url.substr(-1) === '/' && req.url.length > 1 ) {
-		res.redirect( 301, req.url.slice( 0, -1 ) );
+	var url = req.url;
+	if( url.length > 1 && url.substr( -1 ) === '/' ) {
+		res.redirect( 301, url.slice( 0, -1 ) );
 	}
 	else {
 		next();
